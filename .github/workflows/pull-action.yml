@@ -1,0 +1,15 @@
+name: Mensagem ao fazer pull
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Exibir mensagem
+        run: echo "Olá! Um pull request foi feito neste repositório 🎉"
